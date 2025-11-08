@@ -6,11 +6,11 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:19:47 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 15:19:54 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 16:31:01 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_checkbase(char *str)
+int	ft_checkbase(const char *str)
 {
 	int	i;
 	int	j;

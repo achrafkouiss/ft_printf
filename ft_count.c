@@ -6,7 +6,7 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 17:54:54 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 23:21:12 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 14:17:41 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ int	ft_count(int n)
 {
 	int	count;
 
-    if (n < 10 && n >= 0)
-    {
-        return (0);
-    }
-    else if (n > -10 && n < 0)
-    {
-        return (1);
-    }
+	if (n == -2147483648)
+		return (10);
+	if (n < 10 && n >= 0)
+	{
+		return (0);
+	}
+	else if (n > -10 && n < 0)
+	{
+		return (1);
+	}
 	count = 0;
 	if (n < 0)
 	{
@@ -42,15 +44,15 @@ unsigned int	ft_count_unsigned(unsigned int n)
 {
 	unsigned int	count;
 
-    if (n < 10 && n <= 0)
-    {
-        return (0);
-    }
+	if (n < 10 && n <= 0)
+	{
+		return (0);
+	}
 	count = 0;
 	while (n > 0)
 	{
 		n = n / 10;
 		count++;
 	}
-	return (count - 1); 
+	return (count - 1);
 }

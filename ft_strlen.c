@@ -6,7 +6,7 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:29:53 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 15:30:04 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 14:28:25 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (6);
 	i = 0;
 	while (s[i])
 		i++;

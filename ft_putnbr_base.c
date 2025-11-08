@@ -6,13 +6,13 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:36:30 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 23:37:55 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 16:31:40 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_putnbr_base(int nbr, const char *base)
 {
 	int		len_base;
 	long	lnbr;

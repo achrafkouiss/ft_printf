@@ -6,13 +6,13 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:50:55 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 23:50:04 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 16:31:29 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_unsigned_nbr_base(unsigned int nbr, char *base)
+int	ft_put_unsigned_nbr_base(unsigned int nbr, const char *base)
 {
 	int		len_base;
 	long	lnbr;

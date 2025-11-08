@@ -6,17 +6,22 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 00:58:30 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 17:32:19 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 14:32:40 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+void	ft_putstr(const char *s)
 {
 	size_t	i;
 
 	i = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return ;
+	}
 	while (s[i])
 	{
 		ft_putchar(s[i]);
