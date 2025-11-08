@@ -6,16 +6,20 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:28:08 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 15:28:39 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/07 23:49:45 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_base(long nbr, char *base, int len_base)
+int	ft_print_base(long nbr, char *base, int len_base)
 {
+	int	i;
+
+	i = 0;
 	if (nbr == 0)
-		return ;
-	ft_print_base(nbr / len_base, base, len_base);
+		return (0);
+	i = ft_print_base(nbr / len_base, base, len_base) + 1;
 	ft_putchar(base[nbr % len_base]);
+	return (i);
 }

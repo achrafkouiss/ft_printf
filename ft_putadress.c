@@ -6,21 +6,26 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:45:16 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/07 17:34:17 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/08 01:43:00 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_print_adress(unsigned long long nbr, char *base, int len_base)
+int	ft_print_adress(unsigned long long nbr, char *base, int len_base)
 {
+	int	i;
+
+	i = 0;
 	if (nbr == 0)
-		return ;
-	ft_print_adress(nbr / len_base, base, len_base);
+		return (0);
+	i = ft_print_adress(nbr / len_base, base, len_base) + 1;
 	ft_putchar(base[nbr % len_base]);
+	return (i);
+	
 }
 
-void	ft_putadress(unsigned long long nbr, char *base)
+int	ft_putadress(unsigned long long nbr, char *base)
 {
 	int		len_base;
 	unsigned long long	lnbr;
@@ -28,13 +33,12 @@ void	ft_putadress(unsigned long long nbr, char *base)
 	lnbr = nbr;
     ft_putstr("0x");
 	if (!ft_checkbase(base))
-		return ;
-    
+		return (0);
 	len_base = ft_strlen(base);
 	if (lnbr == 0)
 	{
 		ft_putchar(base[0]);
-		return ;
+		return (0);
 	}
-	ft_print_adress(lnbr, base, len_base);
+	return (ft_print_adress(lnbr, base, len_base) + 1);
 }
