@@ -6,13 +6,13 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:45:16 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/08 16:26:56 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/11 10:21:05 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_adress(unsigned long long nbr, const char *base, int len_base)
+int	ft_print_adress(unsigned long nbr, const char *base, int len_base)
 {
 	int	i;
 
@@ -24,20 +24,20 @@ int	ft_print_adress(unsigned long long nbr, const char *base, int len_base)
 	return (i);
 }
 
-int	ft_putadress(unsigned long long nbr, const char *base)
+int	ft_putadress(unsigned long nbr, const char *base)
 {
 	int					len_base;
-	unsigned long long	lnbr;
+	unsigned long		lnbr;
 
 	if (nbr == 0)
 	{
 		ft_putstr("(nil)");
 		return (4);
 	}
-	lnbr = nbr;
-	ft_putstr("0x");
 	if (!ft_checkbase(base))
 		return (0);
+	lnbr = nbr;
+	ft_putstr("0x");
 	len_base = ft_strlen(base);
 	if (lnbr == 0)
 	{

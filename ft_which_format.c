@@ -6,11 +6,41 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 13:39:04 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/08 16:25:00 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/11 09:55:00 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_print_int(int n)
+{
+	ft_putnbr(n);
+	return (ft_count(n));
+}
+
+int	ft_print_string(const char *s)
+{
+	ft_putstr(s);
+	return (ft_strlen(s));
+}
+
+int	ft_print_unsigned_int(unsigned int n)
+{
+	ft_unsigned_putnbr(n);
+	return (ft_count_unsigned(n));
+}
+
+int	ft_print_hex(int n, const char c, int count)
+{
+	const char	*base;
+
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	count += ft_put_unsigned_nbr_base(n, base);
+	return (count);
+}
 
 int	ft_which_format(const char c, va_list ptr, int count)
 {
@@ -24,7 +54,7 @@ int	ft_which_format(const char c, va_list ptr, int count)
 		count += ft_putadress(va_arg(ptr, unsigned long long),
 				"0123456789abcdef");
 	else if (c == 'x' || c == 'X')
-		count = ft_print_hex(va_arg(ptr, int), c, count);
+		count = ft_print_hex(va_arg(ptr, unsigned int), c, count);
 	else if (c == '%')
 		ft_putchar('%');
 	else if (c == 'c')

@@ -6,7 +6,7 @@
 /*   By: akouiss <akouiss@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:19:47 by akouiss           #+#    #+#             */
-/*   Updated: 2025/11/08 16:31:01 by akouiss          ###   ########.fr       */
+/*   Updated: 2025/11/11 10:20:48 by akouiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_checkbase(const char *str)
 	int	j;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		j = i + 1;
